@@ -1,0 +1,418 @@
+* { padding: 0; margin: 0; }
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+
+:root {
+  --loginBG: #2A2A32;
+  --loginBox: #515155;
+  --dark-bg: #181823;
+  --light-bg: #2A2A32;
+  --header-Side : #35353D;
+  --header-Main : #24242E;
+  --chat-Input: #2A2A32;
+  --join-Button: #95E77A;
+  --create-Button: #E7877A;
+  --chat-Item : #515155;
+}
+
+
+#login
+{
+	
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-color: var(--loginBG);
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5em;
+	color: white;
+	font-family: Sans-Serif;
+	
+}
+
+#loginBox
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 500px;
+	height: 250px;
+	background-color: var(--loginBox);
+	border-radius: 20px;
+	
+}
+
+#loginUsername
+{
+	
+	width: 175px;
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	padding-left: 3px;
+	font-height: 1vw;
+	
+}
+
+#loginSubmit
+{
+	
+	height: 35px;
+	width: 175px;
+	border: none;
+	border-radius: 5px;
+	padding-left: 3px;
+	cursor: pointer;
+	background-color: #95E77A;;
+	
+}
+
+#mainBlock
+{
+	
+	width: 100%;
+	height: 100%;
+	display:flex;
+	background-color: var(--header-Side);
+	position: relative;
+	font-family: Sans-Serif;
+	
+}
+
+#sideWindow
+{
+	
+	width: 25%;
+	height: 100%;
+	background-color: var(--light-bg);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+}
+
+#chatWindow
+{
+	
+	width: 75%;
+	height: 100%;
+	background-color: var(--dark-bg);
+	border-top-left-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+}
+
+#chatInfo
+{
+	
+	width: 100%;
+	height: 4em;
+	background-color: var(--header-Main);
+	border-top-left-radius: 15px;
+	line-height: 100%;
+	
+}
+
+#chatInfo h2
+{
+	
+	position:relative;
+	top: 40%;
+	left: 2.5%;
+	width: 95%;
+	color: white;
+	
+}
+
+#chatSpace
+{
+	
+	height: 82%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	overflow-y:scroll;
+	color: white;
+	width: 95%;
+	border: 0;
+	overflow-wrap: break-word;
+	
+}
+
+#chatInput
+{
+	
+	height: 4em;
+	width: 100%;
+	margin-top: auto;
+	
+}
+
+#chatInputBox
+{
+	
+	background-color: var(--chat-Input);
+	position:relative;
+	height: 80%;
+	width: 95%;
+	left: 2.5%;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	
+}
+
+#chatInputFileInsertLabel 
+{
+	
+	cursor: pointer;
+	position: relative;
+	top: 10%;
+	left: 5px;
+	height: 80%;
+	aspect-ratio: 1/1;
+	border: none;
+	
+}
+
+#chatInputFileInsertLabel img
+{
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1/1;
+	border: none;
+	
+}
+
+#chatInputFileInsertButton
+{
+	display:none;
+
+}
+
+#chatInputText
+{
+	
+	position: relative;
+	height: 75%;
+	width: 90%;
+	border: none;
+	background: transparent;
+	margin: 0 auto;
+	top: 12.5%;
+	color: white;
+	font-size: 1vw;
+	caret-color: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+	
+}
+
+#chatInputSubmit
+{
+	
+	cursor: pointer;
+	position: relative;
+	top: 10%;
+	right: 5px;
+	background: url("./assets/checkmark.png") no-repeat;
+	background-size: contain;
+	height: 80%;
+	aspect-ratio: 1/1;
+	border: none;
+	
+}
+
+#joinCreateBox
+{
+	
+	background-color: var(--header-Side);
+	position: relative;
+	width: 100%;
+	height: 4em;
+	display: flex;
+	flex-direction: row;
+	column-gap: 5px;
+	justify-content: space-around;
+	
+	
+}
+
+#joinCreateInputContainer
+{
+	
+	position: relative;
+	background-color: #F1F1F4;
+	width: 60%;
+	height: 75%;
+	top: 12.5%;
+	border-radius: 5px;
+
+	
+}
+
+#joinCreateInput
+{
+	
+	position: relative;
+	width: 90%;
+	left: 2.5%;
+	height: 90%;
+	top: 5%;
+	background:transparent;
+	border: none;
+	font-size: 2vw;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-right: 2px;
+	
+}
+
+#joinCreateBox input[type="submit"]
+{
+	
+	position:relative;
+	height: 75%;
+	top: 12.5%;
+	width: 70px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	color: white;
+	font-size: 1.25vw;
+	
+}
+
+#joinButton
+{
+	
+	background-color: var(--join-Button);
+	
+}
+
+#createButton
+{
+	
+	background-color: var(--create-Button);
+	
+}
+
+#chatList
+{
+	
+	width: 100%;
+	height: 92%;
+	overflow-y: auto;
+	padding-left: 3px;
+	
+}
+
+
+.chatItem
+{
+	
+	height: 75px;
+	width: 99%;
+	background-color: var(--chat-Item);
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+}
+
+.chatItem img
+{
+	
+	height: 50px;
+	width: 50px;
+	margin: 0;
+	
+}
+
+.nameRoom
+{
+	
+	color: white;
+	padding-left: 5px;
+	display: flex;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	width: 80%;
+	height: 100%;
+	font-size: 2vw;
+	
+}
+
+.exitRoom
+{
+	display:none;
+	height: 50px;
+	width: 50px;
+	margin-right: 3px;
+	border: none;
+	cursor: pointer;
+	background: url("./assets/exitRight.png") no-repeat 0 0 transparent;
+}
+
+
+
+
+/*Custom Scroll Bar FOR CHATLIST*/
+
+/* width */
+#chatList::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#chatList::-webkit-scrollbar-track {
+  background: var(--light-bg); 
+}
+ 
+/* Handle */
+#chatList::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+#chatList::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+/*Custom Scroll Bar FOR OTHERS*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--dark-bg); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

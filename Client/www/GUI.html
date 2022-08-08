@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>ChatApp GUI</title>
+
+<script src="eel.js"></script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+
+</head>
+
+<body>
+
+<link rel="stylesheet" href="styles.css">
+
+
+
+<!--Start login-->
+<div id ="login">
+
+	<div id="loginBox">
+	
+		<h1>Chat Server Client</h1>
+		<h4>Enter a Username</h4>
+		<input type="text" maxlength="12" name="Username" id="loginUsername"></input>
+		<br/>
+		<input type="submit" maxlength="12" value="Connect" id="loginSubmit" onclick="login()"></input>
+	
+	</div>
+
+</div>
+<!--End login-->
+
+<!--Start loading-->
+<div id ="loading">
+
+</div>
+<!--End loading-->
+
+<!--Start mainBlock -->
+<div id ="mainBlock">
+
+	<!--Start sideWindow -->
+	<div id = "sideWindow">
+	
+		<div id = "joinCreateBox">
+		
+			<div id = "joinCreateInputContainer">
+				
+				<input id ="joinCreateInput" placeholder="Room ID" maxlength="10"></input>
+				
+			</div>
+		
+			<input type ="submit" id ="joinButton" value="Join" onclick="joinRoom()"></button>
+			<input type ="submit" id ="createButton" value="Create" onclick="createRoom()"></button>
+		
+		</div>
+	
+	
+		<div id = "chatList">
+		
+			<div class = "chatItem" id="room_0000">
+				
+				<img src="./assets/groupIcon.png"></img>
+				<input type="button" class="nameRoom" value="Public Server" onclick="changeRoomClick(this.parentElement)"></button>
+				<input type="submit" onclick="leaveRoom(this.parentElement)" class="exitRoom" value=""></input>
+				
+			</div>
+		
+		</div>
+	
+	
+	
+	</div>
+	<!--End sideWindow -->
+	
+	<!--Start chatWindow -->
+	<div id ="chatWindow">
+	
+		<!--Start chatInfo -->
+		<div id ="chatInfo">
+		
+			<h2 id ="chatRoomName">Public Chat Room</h2>
+		
+		</div>
+		<!--End chatInfo -->
+	
+		<!--Start chatSpace -->
+		<div id ="chatSpace">
+		
+		
+		</div>
+		<!--End chatSpace -->
+		
+		<!--Start chatInput -->
+		<div id ="chatInput">
+		
+			<div id = "chatInputBox">
+			
+				<label for="chatInputFileInsertButton" id = "chatInputFileInsertLabel"><img src="./assets/plus.png"></label>
+				<input type="file" id="chatInputFileInsertButton"  accept="image/*">
+				<!--<button type = "button" id = "chatInputFileInsertButton"></button>-->
+
+				<input id = "chatInputText" maxlength = "2000"></input>
+				
+				<button type="button" id = "chatInputSubmit" onclick="sendMessage()"></button>
+				
+			
+			</div>
+		
+		</div>
+		<!--End chatInput -->
+	
+	</div>
+	<!--End chateWindow -->
+
+</div>
+<!--End mainBlock -->
+
+<script src="script.js" ></script>
+
+</body>
+
+</html>
