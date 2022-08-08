@@ -2,6 +2,8 @@
 This project serves as the most basic foundation for a simple Chat App built using Python, and designed using HTML, CSS with the help of [EEL.](https://github.com/ChrisKnott/Eel)
 But this can also be used as a complete App amongst you and your group!
 
+<a href="https://www.buymeacoffee.com/aaronpdcunw" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ### Features
 - Easy to use Chat App!
 - Create and Join different Rooms!
