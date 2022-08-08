@@ -9,7 +9,9 @@ But this can also be used as a complete App amongst you and your group!
 - Host servers privately so only you and your friends can join!
 
 <details>
+
 <summary>Table Of Content</summary>
+
 - [Project Info](#chat-app-python-template)
 - [Features](#features)
 - [Server Setup](#server-setup)
@@ -19,6 +21,7 @@ But this can also be used as a complete App amongst you and your group!
 - [Features in Progress](#features-yet-to-be-added)
 - [Contribute](#how-to-contribute)
 - [License](#license)
+
 </details>
 
 ![Demonstration](https://cdn.discordapp.com/attachments/733409916567421028/1005679326345310299/unknown.png)
