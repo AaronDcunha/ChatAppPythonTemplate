@@ -40,9 +40,6 @@ class User:
         self.currentRoom = currentRoom
         self.conn = conn
         
-        
-
-
 
 def encrypt(obj):
     obj = pickle.dumps(obj)
@@ -61,8 +58,6 @@ def getMessageType(message):
 
 #Meant for individual sockets only!
 def sendMessage(socket,message,hidePrint = False):
-    
-    global ClientSockets
     
     user = ClientSockets[socket]
     
@@ -85,8 +80,6 @@ def sendRoomMessage(room,message):
         for user in users:
             
             try:
-            
-                print("Sending message to " + user.username + " at " + user.address)
             
                 sendMessage(user.conn,message,True)
                 
@@ -111,8 +104,7 @@ def sendLeftMessage(username, room):
 
 
 def CreateRoom(socket,room):
-    
-    global ClientSockets
+
     global MessageRooms
     
     currentRoomName = ClientSockets[socket].currentRoom
@@ -157,13 +149,10 @@ def CreateRoom(socket,room):
         if len(MessageRooms[room]) <= 0:
         
             ConnectToRoom(socket, room)
-        
-        
-
+             
 
 def ConnectToRoom(socket,room):
     
-    global ClientSockets
     global MessageRooms
     
     currentRoomName = ClientSockets[socket].currentRoom
@@ -205,7 +194,6 @@ def ConnectToRoom(socket,room):
     
 def LeaveRoom(socket,roomName):
     
-    global ClientSockets
     global MessageRooms
     
     #Make sure this room exists!
@@ -283,9 +271,6 @@ def HandleClient(conn, addr):
             
             msg = decrypt(msg)
             
-            #print(msg,addr)
-            
-            
             msgType = getMessageType(msg)
             
             if msgType == "CONNECT":
@@ -355,8 +340,6 @@ def HandleClient(conn, addr):
                 connected = False
                 break
             
-            
-            
         except ConnectionError as e:
             
             print("Connection error! Disconnecting User! Details: ",e)
@@ -400,7 +383,6 @@ while True:
     
     print("Active Connections : {}".format(threading.active_count()-1))
 
-    
 
 print("Shutting Down...")
 serversocket.close()

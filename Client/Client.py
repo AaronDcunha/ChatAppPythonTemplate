@@ -67,8 +67,6 @@ def sendImageMessage(image64):
 @eel.expose
 def connect(userName):
     
-    global client
-    
     try:
     
         client.connect(ADDR)
@@ -100,9 +98,6 @@ def connect(userName):
 @eel.expose
 def createNewRoom(room):
     
-    global client
-    global username
-    
     message = room
     
     print("Requesting server to create room")
@@ -112,9 +107,6 @@ def createNewRoom(room):
     
 @eel.expose
 def joinRoom(room):
-    
-    global client
-    global username
     
     message = room
     
@@ -126,9 +118,6 @@ def joinRoom(room):
 @eel.expose
 def leaveRoom(room):
     
-    global client
-    global username
-    
     print("Attempting to leave current room!")
     
     sendMessage("LEAVE_ROOM",room)
@@ -136,8 +125,6 @@ def leaveRoom(room):
     
 @eel.expose
 def checkRunning():
-    
-    global connectedServer
 
     if connectedServer:
         
@@ -170,8 +157,6 @@ def handleMessageFrmConsole(message):
     
 def handleMessage(messageObject):
     
-    global currentRoom
-    
     print(messageObject)
     
     message = ""
@@ -190,11 +175,7 @@ def handleMessage(messageObject):
     
     
 def recvMessage():
-    
-    global MAXBYTES
-    
-    global client
-    
+
     global connectedServer
     
     while True:
@@ -229,8 +210,6 @@ def recvMessage():
 
 
 def Disconnect():
-    
-    global client
     
     global connectedServer
     
