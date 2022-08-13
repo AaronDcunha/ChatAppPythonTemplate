@@ -71,7 +71,7 @@ def connect(userName):
     
         client.connect(ADDR)
         
-        threadListen = threading.Thread(target=recvMessage, args=())
+        threadListen = threading.Thread(target=receive_message, args=())
         threadListen.start()
         
         print("LISTENING TO MESSAGES!")
@@ -131,7 +131,7 @@ def checkRunning():
         Disconnect()
         
     
-def handleMessageFrmConsole(message):
+def handle_Message_From_Console(message):
     
     global currentRoom
     global connectedServer
@@ -155,7 +155,7 @@ def handleMessageFrmConsole(message):
         print("Changed room in client")
     
     
-def handleMessage(messageObject):
+def handle_message(messageObject):
     
     print(messageObject)
     
@@ -174,7 +174,7 @@ def handleMessage(messageObject):
     print("messageSent")
     
     
-def recvMessage():
+def receive_message():
 
     global connectedServer
     
@@ -191,11 +191,11 @@ def recvMessage():
             
             if typ == "CONSOLE":
                 
-                handleMessageFrmConsole(msg)
+                handle_Message_From_Console(msg)
                 
             elif typ == "MESSAGE":
                 
-                handleMessage(msg[1])
+                handle_message(msg[1])
                 
         except ConnectionResetError as e:
             
