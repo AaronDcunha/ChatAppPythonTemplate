@@ -8,7 +8,7 @@ import singleton
 
 #Socket Variables
 MAXBYTES = 2097152
-SERVER = "192.168.1.247"  #SERVER IP
+SERVER = "127.0.0.1"  #SERVER IP
 PORT = 5050               #Server PORT
 ADDR = (SERVER,PORT)
 connectedServer = False
@@ -21,7 +21,6 @@ currentRoom = "room_0000"
 username  = ""
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.bind((socket.gethostbyname(socket.gethostname()),0))
 
 
 def getMessageType(message):

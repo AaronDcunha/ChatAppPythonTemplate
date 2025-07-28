@@ -2,7 +2,7 @@ import socket
 import threading
 import pickle
 
-HOST = "192.168.1.247"
+HOST = "127.0.0.1"
 PORT = 5050
 
 MaxBytes = 2097152
